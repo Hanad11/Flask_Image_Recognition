@@ -1,0 +1,67 @@
+﻿************* Module app
+app.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+app.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
+app.py:24:4: W0702: No exception type(s) specified (bare-except)
+app.py:17:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+************* Module conftest
+conftest.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+conftest.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+conftest.py:8:30: W0621: Redefining name 'client' from outer scope (line 7) (redefined-outer-name)
+************* Module model
+model.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+model.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+model.py:21:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module test_acceptance_edge_cases
+test_acceptance_edge_cases.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+test_acceptance_edge_cases.py:5:0: C0411: standard import "threading.Thread" should be placed before third party import "pytest" (wrong-import-order)
+test_acceptance_edge_cases.py:4:0: W0611: Unused import pytest (unused-import)
+test_acceptance_edge_cases.py:5:0: W0611: Unused Thread imported from threading (unused-import)
+************* Module test_acceptance_happy
+test_acceptance_happy.py:32:0: C0301: Line too long (117/100) (line-too-long)
+test_acceptance_happy.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+test_acceptance_happy.py:4:0: W0611: Unused import pytest (unused-import)
+************* Module test_acceptance_sad
+test_acceptance_sad.py:27:0: C0303: Trailing whitespace (trailing-whitespace)
+test_acceptance_sad.py:31:0: C0303: Trailing whitespace (trailing-whitespace)
+test_acceptance_sad.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+test_acceptance_sad.py:13:30: W0621: Redefining name 'client' from outer scope (line 7) (redefined-outer-name)
+test_acceptance_sad.py:16:33: W0621: Redefining name 'client' from outer scope (line 7) (redefined-outer-name)
+************* Module test_integration_happy
+test_integration_happy.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+test_integration_happy.py:4:0: W0611: Unused import pytest (unused-import)
+************* Module test_integration_sad
+test_integration_sad.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+test_integration_sad.py:10:30: W0621: Redefining name 'client' from outer scope (line 8) (redefined-outer-name)
+test_integration_sad.py:13:22: W0621: Redefining name 'client' from outer scope (line 8) (redefined-outer-name)
+test_integration_sad.py:5:0: C0411: standard import "io.BytesIO" should be placed before third party import "pytest" and first party import "app.app"  (wrong-import-order)
+test_integration_sad.py:5:0: W0611: Unused BytesIO imported from io (unused-import)
+************* Module test_model
+test_model.py:22:0: C0301: Line too long (102/100) (line-too-long)
+test_model.py:25:0: C0301: Line too long (127/100) (line-too-long)
+test_model.py:68:0: C0301: Line too long (111/100) (line-too-long)
+test_model.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+test_model.py:11:4: W0621: Redefining name 'model' from outer scope (line 9) (redefined-outer-name)
+test_model.py:28:24: W0621: Redefining name 'model' from outer scope (line 9) (redefined-outer-name)
+test_model.py:28:24: W0613: Unused argument 'model' (unused-argument)
+test_model.py:50:35: W0621: Redefining name 'model' from outer scope (line 9) (redefined-outer-name)
+test_model.py:50:35: W0613: Unused argument 'model' (unused-argument)
+test_model.py:59:39: W0621: Redefining name 'model' from outer scope (line 9) (redefined-outer-name)
+test_model.py:59:39: W0613: Unused argument 'model' (unused-argument)
+test_model.py:1:0: W0611: Unused import os (unused-import)
+test_model.py:1:0: R0801: Similar lines in 2 files
+==test_acceptance_happy:[18:38]
+==test_integration_happy:[12:21]
+    response = client.post(
+        "/prediction",  # Correct route for prediction
+        data={"file": (img_data, img_data.name)},
+        content_type="multipart/form-data"
+    )
+
+    # Assertions
+    assert response.status_code == 200
+    assert b"Prediction" in response.data  # Modify this check based on your output (duplicate-code)
+
+------------------------------------------------------------------
+Your code has been rated at 7.19/10 (previous run: 7.19/10, +0.00)
+
